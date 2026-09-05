@@ -83,7 +83,7 @@ class UserCard extends HTMLElement {
         
         <!-- Pilar 3: Ranura para proyectar contenido externo -->
         <div class="slot-container">
-          <slot>Sin información extra</slot>
+          <slot name="contact">Sin contacto</slot>
         </div>
       </div>
     `;
