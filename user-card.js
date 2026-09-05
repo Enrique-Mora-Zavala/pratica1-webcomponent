@@ -7,7 +7,7 @@ class UserCard extends HTMLElement {
   
   // Ciclo de vida: Atributos que monitorea el navegador
   static get observedAttributes() {
-    return ['name', 'role', 'status'];
+    return ['name', 'role', 'status', 'department'];
   }
 
   // Ciclo de vida: Reacción a cambios de atributos
@@ -26,6 +26,7 @@ class UserCard extends HTMLElement {
     const name = this.getAttribute('name') || 'Usuario anónimo';
     const role = this.getAttribute('role') || 'Sin rol asignado';
     const status = this.getAttribute('status') || 'offline';
+    const department = this.getAttribute('department') || 'General';
     const isOnline = status === 'online';
     
     this.shadowRoot.innerHTML = `
@@ -77,6 +78,7 @@ class UserCard extends HTMLElement {
       <div class="card">
         <h3>${name}</h3>
         <p>${role}</p>
+        <p>Departamento: ${department}</p>
         <span class="badge">${status}</span>
         
         <!-- Pilar 3: Ranura para proyectar contenido externo -->
